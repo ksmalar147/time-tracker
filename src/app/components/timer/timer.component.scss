@@ -1,0 +1,32 @@
+.track-btns {
+  button {
+    border-radius: 30px;
+    padding: 0.4rem 2rem;
+    color: white;
+    border: 1px solid transparent;
+  }
+
+  .start-btn {
+    background-color: rgb(80, 86, 237);
+  }
+
+  .stop-btn {
+    background-color: rgba(237, 80, 80, 1);
+  }
+}
+
+.vr-line {
+  height: 30px;
+  width: 2px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  display: block;
+  margin-right: 0.6rem;
+
+  @media (max-width:768px) {
+    display: none;
+  }
+}
+
+.time {
+  color: rgba(80, 86, 237, 1);
+}

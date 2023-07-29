@@ -1,0 +1,78 @@
+.tracker-list {
+  padding: 5% 9%;
+  height: 90%;
+  width: 100%;
+  position: relative;
+  overflow: scroll;
+  .tracker-card {
+    border: 1px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 8px;
+    border-radius: 15px;
+  }
+  .time{
+    color: rgba(80, 86, 237, 1);
+  }
+}
+
+.task-detail {
+  .title {
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .sub-title {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .content {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+
+  }
+}
+
+.track-btns {
+  button {
+    border-radius: 30px;
+    padding: 9px 44px;
+    color: white;
+    border: 1px solid transparent;
+  }
+
+  .start-btn {
+    background-color: rgb(80, 86, 237);
+  }
+
+  .stop-btn {
+    background-color: rgba(237, 80, 80, 1);
+  }
+}
+
+.vr-line {
+  height: 30px;
+  width: 2px;
+  border: 1px solid rgba(217, 217, 217, 1);
+}
+
+.fab-block {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.tracker-modal{
+
+  .modal-content{
+    border-radius: 20px;
+    border: 1px solid transparent;
+    padding: 30px 27px;
+  }
+}

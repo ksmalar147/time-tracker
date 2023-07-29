@@ -1,0 +1,66 @@
+<app-header [totalTime]="totalTime"></app-header>
+
+<div class="tracker-list mb-3">
+    <div class="container">
+        <div *ngIf="taskList.length > 0">
+            <div *ngFor="let data of taskList">
+                <!-- Tracker card -->
+                <div class="card tracker-card p-2 mb-4">
+                    <div class="card-body">
+                        <div class="row align-items-start">
+                            <div class="col-md-7 task-detail">
+                                <div class="title">{{data.taskName}}</div>
+                                <div class="sub-title mt-4 mb-2">History</div>
+                                <div class="content" *ngIf="data.history.length==0">No History Found, Click on the start
+                                    button to track the timer</div>
+                                <div class="content" *ngIf="data.history.length > 0">
+                                    <div *ngFor="let item of data.history">
+                                        <div class="mb-1">
+
+                                            <span class="content">Started the timer at {{item.startTime |
+                                                dateFormat}}</span>
+                                            <span *ngIf="!item.endTime" class="content">(Active)</span>
+                                            <span *ngIf="item.endTime" class="content">&nbsp;& Stopped at {{item.endTime
+                                                | dateFormat}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <app-timer [taskDetail]="data" (stopped)="onTimerStopped($event,data.id)"
+                                    (timerStarted)="startTimer(data.id)"
+                                    (deleteTask)="onDeleteTask(data.id)"></app-timer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tracker">
+        <div class="fab-block" (click)="openModal()">
+            <img src="../../assets/svg/fab-add.svg" alt="fab-add">
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" data-backdrop="static"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg tracker-modal" role="document">
+        <div class="modal-content">
+            <div class="mb-4">
+                <label for="">Enter the Task Name</label>
+                <input type="text" class="form-control mt-2" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" [(ngModel)]="taskName">
+                <div *ngIf="nameInvalid" class="text-danger">
+                    Task Name is required.
+                </div>
+            </div>
+            <div class="track-btns">
+                <button class="start-btn" (click)="onSave()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

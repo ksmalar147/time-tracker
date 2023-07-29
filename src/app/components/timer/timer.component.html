@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center justify-content-between w-100">
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="vr-line"></div>
+    <div class="time">
+      {{getFormattedTime()}}
+    </div>
+  </div>
+  <div class="d-flex track-btns">
+    <button *ngIf="showStartBtn" class="start-btn" (click)="startTimer()">Start</button>
+    <button *ngIf="showStopBtn" class="stop-btn" (click)="stopTimer()">Stop</button>
+    &nbsp;
+    &nbsp;
+    <img src="../../assets/svg/delete-button.svg" class="pointer" alt="delete-button" (click)="onDeleteTask()">
+  </div>
+</div>
